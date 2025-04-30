@@ -5,6 +5,16 @@
 KMM (K-Means-Medoids) is a distributed hybrid clustering algorithm that combines the speed of [K-Means](https://en.wikipedia.org/wiki/K-means_clustering) with the robustness of [K-Medoids](https://en.wikipedia.org/wiki/K-medoids).  
 It leverages distributed computing to efficiently solve clustering problems by exploiting the strengths of both methods.
 
+## Related Work
+
+The KMM algorithm is based on the work of Dr. Habiba Drias, Dr. Nadjib Fodil Cherif, and Dr. Amine Kechid, titled *"k-MM: A Hybrid Clustering Algorithm Based on k-Means and k-Medoids"*.  
+This paper presents the theoretical foundation and initial experiments of the KMM algorithm. You can access the full paper here:
+
+- **k-MM: A Hybrid Clustering Algorithm Based on k-Means and k-Medoids**  
+  Drias, H., Cherif, N.F., Kechid, A. (2016). In: Pillay, N., Engelbrecht, A., Abraham, A., du Plessis, M., Snášel, V., Muda, A. (eds) Advances in Nature and Biologically Inspired Computing. Advances in Intelligent Systems and Computing, vol 419. Springer, Cham.  
+  DOI: [10.1007/978-3-319-27400-3_4](https://doi.org/10.1007/978-3-319-27400-3_4)
+
+
 ## Working Principle of the Distributed Hybrid KMM Algorithm
 
 ### Overview of the Hybrid Algorithm
@@ -51,10 +61,11 @@ Each worker node (*rank ≥ 1*) is responsible for:
 | K-Medoids         | 4.4735 seconds      |
 | **KMM (Hybrid)**  | 1.827 seconds       |
 
+The hybrid KMM algorithm provides a balance between the speed of K-Means and the robustness of K-Medoids. As seen in the execution time comparison, KMM significantly outperforms K-Medoids while still improving on the speed of K-Means.
 
 ### Visualizations
 
-Here are some sample visualizations from the clustering process:
+The following visualization shows the clustering result of the KMM algorithm, highlighting how the hybrid approach distributes the points among clusters and the resulting medoids.
 
 ![KMM Clustering Result](./distributed_arch/clustering_result.png)
 
@@ -73,3 +84,15 @@ The project structure is as follows:
   - `hosts.txt`: Configuration file for worker nodes
   - `distributed_clustering.py`: Python script for distributed KMM algorithm
   - `run.sh`: Shell script to execute the distributed algorithm
+
+
+## References
+
+- [K-Means Clustering](https://en.wikipedia.org/wiki/K-means_clustering)
+- [K-Medoids](https://en.wikipedia.org/wiki/K-medoids)
+- [k-MM: A Hybrid Clustering Algorithm Based on k-Means and k-Medoids](https://doi.org/10.1007/978-3-319-27400-3_4) by Drias, H., Cherif, N.F., Kechid, A. (2016)
+
+
+
+## Contributing
+Contributions are welcome! If you have suggestions for improvements or bug fixes, feel free to open an issue or submit a pull request.
